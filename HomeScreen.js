@@ -4,27 +4,30 @@ import { StyleSheet, Text, View, SafeAreaView, TextInput, Button, Alert } from '
 import MainCampaign from './MainCampaign';
 
 export default function HelloWorldApp() {
-  const [value, onChangeText] = React.useState('Useless Placeholder');
+  const [value, setValue] = React.useState('검색할 태그를 입력하세요.');
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}> 
-        <Text> 올바로 </Text>
+        <Text style={styles.title}> 올  바  로 </Text>
       </View>
       <View style={styles.searchBar}>
         <TextInput
             style={styles.searchTextInput}
             inlineImageLeft='search_icon'
             value={value}
-            onChangeText={text => onChangeText(text)}
+            onChangeText={text => setValue(text)}
             />
       </View>
       <View style={styles.tagBar}>
         <View style={styles.tagButton}>
-          <Button color="#ffffff" onPress={() => Alert.alert('Simple Button1 pressed')} title="testbutton1" />
+          <Text style={styles.tagText} onPress={() => Alert.alert('Simple Button 111 pressed')}> 투표 </Text>
         </View>
         <View style={styles.tagButton}>
-          <Button color="#ffffff" onPress={() => Alert.alert('Simple Button2345 pressed')} title="buttontest2" />
+          <Text style={styles.tagText} onPress={() => Alert.alert('Simple Button 222 pressed')}> 동물보호 </Text>
+        </View>
+        <View style={styles.tagButton}>
+          <Text style={styles.tagText} onPress={() => Alert.alert('Simple Button 333 pressed')}> 코로나 </Text>
         </View>
       </View>
       <View style={styles.mainView}>
@@ -35,9 +38,14 @@ export default function HelloWorldApp() {
 }
 
 const styles = StyleSheet.create({
+  title: {
+    fontFamily: 'BlackHanSans-Regular',
+    fontSize: 35,
+  },
   container: {
     flex: 1,
     backgroundColor: 'yellow',
+    fontFamily: 'BlackHanSans-Regular',
   },
   header: {
     flex: 1,
@@ -50,6 +58,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
   },
   searchTextInput: {
+    fontFamily: 'DoHyeon-Regular',
     flex: 1,
     backgroundColor: 'green',
     borderRadius: 5,
@@ -63,6 +72,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   tagButton: {
+    backgroundColor: 'green',
+    borderRadius: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+    paddingTop: 3,
+    margin: 2,
+  },
+  tagText: {
+    fontFamily: 'DoHyeon-Regular',
     backgroundColor: 'green',
     borderRadius: 5,
     paddingLeft: 5,

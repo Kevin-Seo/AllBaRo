@@ -55,6 +55,8 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>DoHyeon-Regular.ttf</string>
+		<string>BlackHanSans-Regular.ttf</string>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
